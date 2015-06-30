@@ -3,7 +3,7 @@
 % Packages
 \usepackage{graphicx}
 \usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
+\usepackage{lmodern}
 \usepackage[francais]{babel}
 \usepackage[toc,page]{appendix} 
 \usepackage{listings}
@@ -82,7 +82,7 @@ scientific documents}
 351, cours de la Libération\\ 33405 Talence Cedex, France}\\[1cm]
         {\Large Sous la direction de : \\}
         {\Large Myriam \bsc{Desainte-Catherine},\\
-         Jean-Mickaël \bsc{Celerier}}\\[1cm]
+         Jean-Michaël \bsc{Celerier}}\\[1cm]
          {\Large Du 01 juin 2015 au 30 juin 2015\\}
         \vspace*{\stretch{1}} 
     		\includegraphics[width=7cm]{image/scrime.jpg} 	
@@ -128,27 +128,28 @@ Le \acrshort{scrime} est une structure rattachée administrativement au  \acrful
 
 Le SCRIME travaille essentiellement sur des projets de recherches visant à créer des structures permettant de composer de la musique et de les rendre interactif ainsi que  de mettre en relation des chercheurs et des artistes à des fins de recherche et de création.
 
-\chapter{I-score}
+\chapter{i-score}
 \paragraph{}
 
 \begin{center}
 \includegraphics[scale=0.1]{image/iscore.jpg}
 \end{center}
 
-I-score est un logiciel qui permet d'avoir sous une seule interface, la possibilité de créer, de synchroniser et d'avoir une interactive de la musique.
+i-score est un logiciel qui permet d'avoir sous une seule interface, la possibilité de créer, de synchroniser et d'avoir une interactive de la musique.
 \\
 C'est un séquenceur basé sur Qt.\\
 Qt est une API orienté C++ qui dans notre cas, permet offre des outils de création d'interfaces graphiques.
 \paragraph{}
-I-score est basé sur le protocole de communication OSC et minuit.
+i-score est basé sur le protocole de communication OSC et minuit.
 \\
 \acrfull{osc} est un protocole de transmission de données entre ordinateurs, robots ou tout autre matériel ou logiciel compatible. Il permet de tout gérer en temps réels. Utilise les protocoles UDP ou TCP pour le réseaux. Il est semblable au format \acrfull{midi} avec de nettes améliorations. Son équivalent minuit permet de faire communiquer un ordinateur avec l'appareil et inversement, contrairement à \acrshort{osc} qui ne peut qu'envoyer des instructions et également utilisé par i-score.
 \paragraph{}
-L'utilisateur dessine des "boites" dans la partie "scénario" du logiciel. Chaque boites peut correspondre à de la musique, un mouvement d'un robot, de l'éclairage, ..., sur une grille de temps.
+L'utilisateur dessine des 'boites' dans la partie "scénario" du logiciel. Chaque boites peut correspondre à de la musique, un mouvement d'un robot, de l'éclairage, ..., sur une grille de temps.
 \paragraph{}
 Chaque boite, peut contenir des fluctuations par des courbes, des droites croissante ou décroissante pour varier une condition au cours du temps.
 \\
 A chaque tops d'horloge, (c'est à dire lorsque la barre de temps atteint une boite), elle active le paramètre du scénario.
+
 
 \chapter{Metabot}
 \begin{center}
@@ -165,7 +166,7 @@ Le metabot peux être commander par instruction simple par un terminal, ou via u
 \\
 Par le terminal, les instructions envoyer modifie directement les paramètres du metabot. Par le site internet ou par le logiciel, les instructions sont envoyé en langage assembleur Rhock, un langage créé pour les besoins du robot.
 \paragraph{}
-Un  gitHub\footnote{https:// gitHub.com/Rhoban/MetabotManager} est disponible pour le code source du metabot.
+Un  gitHub\footnote{https://gitHub.com/Rhoban/MetabotManager} est disponible pour le code source du metabot.
 \paragraph{}
 Le chemin d'accès sur un terminal sous Ubuntu est \texttt{/dev/ttyACM0} pour l'usb, et \texttt{/dev/rfcomm0} pour le bluetooth. 
 
@@ -174,13 +175,16 @@ Le site internet permet de compiler directement dans la mémoire du metabot, des
 \paragraph{}
 Les commandes de base pour faire fonctionner sont (x correspond à la variable mise en argument):\\
 \begin{itemize}
-\item dx x - fait avancer le metabot en avant avec une fréquence de x
-\item dy x - fait avancer le metabot de coté avec une fréquence de x
+\item dx x - fait avancer le metabot en avant avec une vitesse de x
+\item dy x - fait avancer le metabot de coté avec une vitesse de x
 \item crab x - modifie l'angle des 4 pattes de façon symétrique de x degré
 \item turn x - fait tourner le metabot sur lui même de x degré
 \item start - démarre le metabot (les  leds deviennent verte)
 \item stop - arrête le metabot (les  leds deviennent rouge)
 \end{itemize}
+\paragraph{}
+Le metabot est facilement modifiable et permet un contrôle simple et de haut niveau.
+Développé à Bordeaux : Rhoban, LaBRI, Robot Campus, Bordeaux INP, Aquitaine Robotics, Génération Robots.
 
 \section{Connexion pc - metabot}
 
@@ -201,7 +205,7 @@ Le metabot doit être connecter avec une clé (1234) qui peut être modifiée et
 \paragraph{}
 Sous Windows, il faut installer robotManager (logiciel fournit sur le site officiel du metabot).
 
-Ce gestionnaire existe sous Ubuntu, mais il doit être lancé par QtCreator et être récupéré par le  gitHub\footnote{https:// gitHub.com/Rhoban/MetabotManager} du metabot.
+Ce gestionnaire existe sous Ubuntu, mais il doit être lancé par QtCreator et être récupéré par le  gitHub\footnote{https://gitHub.com/Rhoban/MetabotManager} du metabot.
 
 Le metabot peut se connecter au port série RS-232 (une norme standardisant un bus de communication) correspondant au slot COM0 ou COM1, etc ...
 
@@ -210,7 +214,7 @@ Les commandes sont les plus importantes sont: params,  t, move, freq, \\backLegs
 \section{Modifier le firmware}
 \paragraph{}
 
-Si on souhaite installer un firmware modifié il faut le télécharger sur  gitHub\footnote{https:// gitHub.com/Rhoban/Metabot}.
+Si on souhaite installer un firmware modifié il faut le télécharger sur  gitHub\footnote{https://gitHub.com/Rhoban/Metabot}.
 \paragraph{}
 Pour le compiler, il faut modifier le Makefile qui se trouve dans le dossier\\ /src/firmware en enlevant les "-Wall" et en rajoutant la ligne suivante \\dans le LDFLAGS:
 
@@ -223,7 +227,7 @@ Puis, télécharger les dossiers manquant en faisant ./prepare.sh
 Si le script n'arrive pas à télécharger les dossiers, il faut faire dans src/ :\\
 "mkdir rhock"  \\
 Puis ./prepare.sh \\
-(ou directement git clone https:// gitHub.com/Rhoban/Rhock).
+(ou directement git clone https://gitHub.com/Rhoban/Rhock).
 
 Après cette étape faire make.
 
@@ -272,8 +276,10 @@ Avec i-score, pour la même durée, cela prend 5h.
 \includegraphics[scale=0.1]{image/danse.png}
 \end{center}
 
-\chapter{I-score for metabot}
+\chapter{i-score for metabot}
 \section{Les scripts}
+\paragraph{}
+i-score permet de manipuler, sans latence deux metabot et de les contrôler de manière synchrone.
 \paragraph{}
 A partir du site blocks.metabot.fr, nous pouvons récupérer un fichier *.metablocks composé d'une partie xml, et d'une partie assembleur Rhock.
 \paragraph{}
@@ -321,7 +327,7 @@ Tout est généré par un seul script.
 \paragraph{}
 Ce script s'arrête si on rentre en paramètre un autre format ou si le metabot n'est pas connecté à l'ordinateur.
 \paragraph{}
-Tout les fichiers produits durant ce stage ou cité dans ce rapport sont open-source et disponible sur  gitHub\footnote{https:// gitHub.com/OSSIA/i-score-metablocks}.
+Tout les fichiers produits durant ce stage ou cité dans ce rapport sont open-source et disponible sur  gitHub\footnote{https://gitHub.com/OSSIA/i-score-metablocks}.
 
 \begin{center}
 \includegraphics[scale=0.5]{image/schema.jpeg}
@@ -359,7 +365,7 @@ Il est composé de 4 partie:
 \end{itemize}
 et enfin les automations qui correspond aux fluctuation (la courbe) possible à l'intérieur d'un scénario.
 
-Une documentation\footnote{https:// gitHub.com/OSSIA/i-score-metablocks/blob/master/README.md} a été faite pour permettre à la personne qui s'en chargera de mieux comprend le travail effectuer à l'heure actuelle.
+Une documentation\footnote{https://gitHub.com/OSSIA/i-score-metablocks/blob/master/README.md} a été faite pour permettre à la personne qui s'en chargera de mieux comprend le travail effectuer à l'heure actuelle.
 
 
 \def\appendixpage{\vspace*{8cm} 
@@ -377,7 +383,7 @@ Contient des scripts pour transformer les fichiers issus du site internet \footn
 Pour cela, il faut installer libxml2 : 
 \texttt{sudo apt get install libxml2-utils}.
 \paragraph{}
-Pour lancer et passer de .metablocks à des commandes envoyer au metabot.
+Pour lancer et passer de .metablocks à des commandes envoyées au metabot.
 \texttt{./lancement.sh fichier.metablocks}
 \paragraph{}
 Ce dossier contient un fichier \texttt{danse\_FOB.metablocks} qui contient une chorégraphie possible effectuée via le site internet\footnote{blocks.metabot.fr}.
@@ -393,13 +399,13 @@ Pour mettre à jour le metabot:
     \texttt{python robotis-loader.py /dev/ttyACM0 metabot.bin}
 \item soit ./prepare.sh // make // make install
 Pour récupérer le dossier firmware du metabot:
-A l'heure actuelle, les fonctions rhocks ne sont pas fournit dans le dossier  gitHub\footnote{git clone https:// gitHub.com/Rhoban/Metabot.git}.
+A l'heure actuelle, les fonctions rhocks ne sont pas fournit dans le dossier  gitHub\footnote{git clone https://gitHub.com/Rhoban/Metabot.git}.
 \end{itemize}
 
 \paragraph{}
 Il manque donc deux dossiers, pour cela, dans le dossier /firmware/src/ faire ./prepare.sh.
 \paragraph{}
-Si ce script échoue: dans le dossier /src \texttt{mkdir rhock ./prepare.sh \footnote{ou directement git clone https:// gitHub.com/Rhoban/Rhock}}. \\
+Si ce script échoue: dans le dossier /src \texttt{mkdir rhock ./prepare.sh \footnote{ou directement git clone https://gitHub.com/Rhoban/Rhock}}. \\
 Enlever les -Wall du Makefile.\\
 Si le Makefile ne trouve pas la bibliothèque libstdc++.a, il faut remplacer la ligne LDFLAGS par  
 \texttt{LDFLAGS = $(TARGET_LDFLAGS) $(TOOLCHAIN\_LDFLAGS)\\ 
