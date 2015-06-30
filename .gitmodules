@@ -1,0 +1,3 @@
+[submodule "i-score-metablocks"]
+	path = i-score-metablocks
+	url = https://github.com/OSSIA/i-score-metablocks.git
