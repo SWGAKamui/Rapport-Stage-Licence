@@ -138,17 +138,17 @@ Le SCRIME travaille essentiellement sur des projets de recherches visant à cré
 i-score est un logiciel qui permet d'avoir sous une seule interface, la possibilité de créer, de synchroniser et d'avoir une interactive de la musique.
 \\
 C'est un séquenceur basé sur Qt.\\
-Qt est une API orienté C++ qui dans notre cas, permet offre des outils de création d'interfaces graphiques.
+Qt est une API orienté C++ qui dans notre cas, permet d'offrir des outils de création d'interfaces graphiques.
 \paragraph{}
 i-score est basé sur le protocole de communication OSC et minuit.
 \\
-\acrfull{osc} est un protocole de transmission de données entre ordinateurs, robots ou tout autre matériel ou logiciel compatible. Il permet de tout gérer en temps réels. Utilise les protocoles UDP ou TCP pour le réseaux. Il est semblable au format \acrfull{midi} avec de nettes améliorations. Son équivalent minuit permet de faire communiquer un ordinateur avec l'appareil et inversement, contrairement à \acrshort{osc} qui ne peut qu'envoyer des instructions et également utilisé par i-score.
+\acrfull{osc} est un protocole de transmission de données entre ordinateurs, robots ou tout autre matériel ou logiciel compatible. Il permet de tout gérer en temps réel. Utilise les protocoles UDP ou TCP pour le réseau. Il est semblable au format \acrfull{midi} avec de nettes améliorations. Son équivalent minuit permet de faire communiquer un ordinateur avec l'appareil et inversement, contrairement à \acrshort{osc} qui ne peut qu'envoyer des instructions et également utilisé par i-score.
 \paragraph{}
 L'utilisateur dessine des 'boites' dans la partie "scénario" du logiciel. Chaque boites peut correspondre à de la musique, un mouvement d'un robot, de l'éclairage, ..., sur une grille de temps.
 \paragraph{}
 Chaque boite, peut contenir des fluctuations par des courbes, des droites croissante ou décroissante pour varier une condition au cours du temps.
 \\
-A chaque tops d'horloge, (c'est à dire lorsque la barre de temps atteint une boite), elle active le paramètre du scénario.
+A chaque top d'horloge, (c'est à dire lorsque la barre de temps atteint une boite), elle active le paramètre du scénario.
 
 
 \chapter{Metabot}
@@ -162,9 +162,9 @@ Le metabot\footnote{http://www.metabot.fr} est un petit robot sous la forme d'ar
 Il est composé de 12 moteurs, chacun correspondant à une articulation possible. La structure est faite par impression 3D. 
 Il nécessite deux batteries à recharger par usb, une recharge complète prend quelques heures. Nous avons dû nous fournir de quatre batteries par metabot pour pouvoir optimiser la recharge qui prend environ 2h et se fait uniquement par usb.
 \paragraph{}
-Le metabot peux être commander par instruction simple par un terminal, ou via un logiciel (robotManager) ou par un site internet\footnote{blocks.metabot.fr} qui permet de simuler le comportement du metabot.
+Le metabot peux être commandé par instruction simple par un terminal, ou via un logiciel (robotManager) ou par un site internet\footnote{blocks.metabot.fr} qui permet de simuler le comportement du metabot.
 \\
-Par le terminal, les instructions envoyer modifie directement les paramètres du metabot. Par le site internet ou par le logiciel, les instructions sont envoyé en langage assembleur Rhock, un langage créé pour les besoins du robot.
+Par le terminal, les instructions envoyées modifient directement les paramètres du metabot. Par le site internet ou par le logiciel, les instructions sont envoyées en langage assembleur Rhock, un langage créé pour les besoins du robot.
 \paragraph{}
 Un  gitHub\footnote{https://gitHub.com/Rhoban/MetabotManager} est disponible pour le code source du metabot.
 \paragraph{}
@@ -194,13 +194,13 @@ Pour manipuler le metabot, on peut passer par un terminal et y rentrer les comma
 \paragraph{}
 Pour cela (sous Ubuntu): 
 \begin{itemize}
-\item cu -l \texttt{/dev/ttyAMC0} (si le metabot est brancher par usb
-\item cu -l \texttt{/dev/rfcomm0} (si le metabot est branché par bluetooth
+\item cu -l \texttt{/dev/ttyAMC0} (si le metabot est branché par usb)
+\item cu -l \texttt{/dev/rfcomm0} (si le metabot est branché par bluetooth)
 \end{itemize}
 \paragraph{}
-Concernant le bluetooth, il a fallu désinstaller modemmanager, un gestionnaire des fonctionnalités modem d'Ubuntu, installer de base qui envoyait des instructions aléatoires par bluetooth et installer bluemanager (un gestionnaire sous Ubuntu pour le bluetooth) pour connecté le metabot.
+Concernant le bluetooth, il a fallu désinstaller modemmanager, un gestionnaire des fonctionnalités modem d'Ubuntu, installé de base qui envoyait des instructions aléatoires par bluetooth et installer bluemanager (un gestionnaire sous Ubuntu pour le bluetooth) pour connecter le metabot.
 
-Le metabot doit être connecter avec une clé (1234) qui peut être modifiée et lui allouer un port série.
+Le metabot doit être connecté avec une clé (1234) qui peut être modifiée et lui allouer un port série.
 \paragraph{Windows}
 \paragraph{}
 Sous Windows, il faut installer robotManager (logiciel fournit sur le site officiel du metabot).
@@ -209,7 +209,7 @@ Ce gestionnaire existe sous Ubuntu, mais il doit être lancé par QtCreator et �
 
 Le metabot peut se connecter au port série RS-232 (une norme standardisant un bus de communication) correspondant au slot COM0 ou COM1, etc ...
 
-Les commandes sont les plus importantes sont: params,  t, move, freq, \\backLegs, r, h, dx, dy, crab, turn, help, echo, mute, rc, forward, start, stop,\\ dxl\_zero, rhock, run, freeze, kill, killall, erase, erase\_all, meminfo, mem, \\store, version, started.
+Les commandes les plus importantes sont: params,  t, move, freq, \\backLegs, r, h, dx, dy, crab, turn, help, echo, mute, rc, forward, start, stop,\\ dxl\_zero, rhock, run, freeze, kill, killall, erase, erase\_all, meminfo, mem, \\store, version, started.
 
 \section{Modifier le firmware}
 \paragraph{}
@@ -235,7 +235,7 @@ Après cette étape faire make.
 \paragraph{}
 Lors de l'achat d'un metabot, il est fourni avec la première version du firmware (pour vérifier, envoyer la commande "version" au metabot). Pour accéder à toutes les fonctions, il faut donc le mettre à jour.
 \paragraph{}
-On peux le mettra à jour avec robotManager qui va télécharger la dernière version mise en ligne.
+On peux le mettre à jour avec robotManager qui va télécharger la dernière version mise en ligne.
 Avec QtCreator sous Ubuntu, on peut modifier l'accès au nouveau firmware en le faisant télécharger une nouvelle version disponible sur l'ordinateur.
 
 Si on souhaite y mettre un firmware personnalisé, il faut compiler le firmware, et :
@@ -245,9 +245,9 @@ Si on souhaite y mettre un firmware personnalisé, il faut compiler le firmware,
 \item make install (qui l'envoie uniquement par usb)
 \end{itemize}
 
-\section{compiler un programme dans le metabot}
+\section{Compiler un programme dans le metabot}
 \paragraph{}
-Lorsque l'on créer un comportement sous blocks.metabot.fr, on peux le transférer sur le metabot.
+Lorsque l'on crée un comportement sous blocks.metabot.fr, on peux le transférer sur le metabot.
 \paragraph{}
 Pour cela, il faut que le metabot soit au minimum dans la version 1.1.
 \paragraph{}
@@ -260,7 +260,7 @@ Soit le lancer via l'application mobile sur Android.
 L'assembleur Rhock est un langage personnalisé pour le metabot.\\
 Par exemple, pour appeler la fonction qui gère toues les  leds, il faut d'abord mettre la variable de la fonction dans la pile avec "pushf 4" puis appeler la fonction "call robot\_ leds".
 \paragraph{}
-Les boucles sont également prisent en compte: repeat\_0 indique la première boucle 0 et repeat\_end\_0 indique où elle s'arrête. Les lignes de codes entre les deux sera répété x fois en fonction du pushf qui a été fait la ligne d'avant.
+Les boucles sont également prisent en compte: repeat\_0 indique la première boucle 0 et repeat\_end\_0 indique où elle s'arrête. Les lignes de codes entre les deux seront répétées x fois en fonction du pushf qui a été fait la ligne d'avant.
 \paragraph{}
 A l'heure actuelle, les fonctions Rhock ne peuvent être appelées par le terminal. Il est obligatoire de passer par la compilation du site internet. Si cette compilation devient indépendante, les scripts écrits pourront faire la liaison entre le terminal et le metabot et à terme de i-score vers le metabot.
 \\
@@ -299,7 +299,7 @@ type=\"rhock_number\" id=\"9\"><field name=\"NUM\">200
 \npushf 200\ncall robot_move_x\n\nstops","vars":[]}
 \end{verbatim}
 \paragraph{}
-N'étant lisible en l'état, il a fallu faire un script pour chaque langage utilisé par ces fichiers. Cela permet de produire un fichier .xml contenant les blocks de commande assembleur sous format "scratch" et un fichier .txt qui comprend uniquement le code assembleur qui sera par la suite modifier pour envoyer des instructions simples au metabot.
+N'étant lisible en l'état, il a fallu faire un script pour chaque langage utilisé par ces fichiers. Cela permet de produire un fichier .xml contenant les blocks de commande assembleur sous format "scratch" et un fichier .txt qui comprend uniquement le code assembleur qui sera par la suite modifié pour envoyer des instructions simples au metabot.
 
 \paragraph{}
 
@@ -308,7 +308,7 @@ Ainsi, au lieu d'avoir:
 pushf 5 
 call robot\_ leds
 \end{verbatim} 
-ce programme écrit en C va prendre le fichier et ligne après ligne envoyé les instructions simple de type : 
+ce programme écrit en C va prendre le fichier et ligne après ligne et envoyer les instructions simple de type : 
 \texttt{robot\_ leds 5}
 \paragraph{}
 Le tout est géré par un script lancement.sh qui permet de ne faire qu'une seule exécution, transforme le tout et l'envoie directement au metabot à partir du fichier .metablocks.
@@ -316,18 +316,18 @@ Le tout est géré par un script lancement.sh qui permet de ne faire qu'une seul
 \paragraph{}
 \section{La traduction}
 \paragraph{}
-Pour chaque ligne d'un fichier txt, le programme va chercher des correspondance avec des noms de fonction connus (pushf ou call). Pour chaque pushf, la variable correspondante va être enregistré dans une pile. Dès l'apparition d'un call, la pile est dépiler et on affiche le nom de la fonction correspondante et sa variable sur la même ligne.
+Pour chaque ligne d'un fichier txt, le programme va chercher des correspondances avec des noms de fonction connus (pushf ou call). Pour chaque pushf, la variable correspondante va être enregistrée dans une pile. Dès l'apparition d'un call, la pile est dépilée et on affiche le nom de la fonction correspondante et sa variable sur la même ligne.
 \paragraph{}
 En cas de fonction de répétition, le programme affiche le contenu de cette boucle autant de fois que le précédent pushf a indiqué.
 \paragraph{}
-Le résultat final est un fichier test.txt qui comprend toutes les instructions assembleur en instruction simple pouvant être envoyé automatiquement au metabot par le terminal.
+Le résultat final est un fichier test.txt qui comprend toutes les instructions assembleur en instruction simple pouvant être envoyées automatiquement au metabot par le terminal.
 \paragraph{}
 Tout est généré par un seul script.
 \texttt{./lancement <fichier.metablocks>}
 \paragraph{}
 Ce script s'arrête si on rentre en paramètre un autre format ou si le metabot n'est pas connecté à l'ordinateur.
 \paragraph{}
-Tout les fichiers produits durant ce stage ou cité dans ce rapport sont open-source et disponible sur  gitHub\footnote{https://gitHub.com/OSSIA/i-score-metablocks}.
+Tous les fichiers produits durant ce stage ou cités dans ce rapport sont open-source et disponible sur  gitHub\footnote{https://gitHub.com/OSSIA/i-score-metablocks}.
 
 \begin{center}
 \includegraphics[scale=0.5]{image/schema.jpeg}
@@ -341,13 +341,13 @@ Tout les fichiers produits durant ce stage ou cité dans ce rapport sont open-so
 \includegraphics[scale=0.8]{image/makers.jpg}
 \end{center}
 \paragraph{}
-Le 13 juin s'est déroulé le Robot Makers Day\footnote{http://robotmakersday.fr/}, ce fut l'occasion de montrer notre travail et les perspectives que nous avons.
+Le 13 juin s'est déroulé le Robot Makers Day\footnote{http://robotmakersday.fr/}, ce fut l'occasion de montrer notre travail et les perspectives que nous avions.
 \paragraph{}
-Nous y avons rencontré quelque difficulté. En effet, contrôler un metabot par bluetooth lorsque plusieurs sont présent à cet évènement n'est pas chose aisés. En effet, le nom de l'appareil ne peux être modifier, par conséquent, tous les metabots présents se nommaient robotis-210. Pour pouvoir reconnaître les nôtres, nous regardions la force du signal bluetooth.
+Nous y avons rencontré quelques difficultés. En effet, contrôler un metabot par bluetooth lorsque plusieurs sont présents à cet évènement n'est pas chose aisée. En effet, le nom de l'appareil ne peux être modifié, par conséquent, tous les metabots présents se nommaient robotis-210. Pour pouvoir reconnaître les nôtres, nous regardions la force du signal bluetooth.
 \paragraph{}
 Ayant eu des problèmes de batterie, de connexion et un temps très limité pour la présentation, nous n'avons malheureusement pas pu montrer tout l'étendu de notre travail.
 \paragraph{}
-Malgré cela, le public présent fut ravie de notre présentation.
+Malgré cela, le public présent fut ravi de notre présentation.
 
 \paragraph{}
 \chapter{Perspective}
@@ -356,16 +356,16 @@ Le stage n'étant que d'un mois, il ne m'a pas été possible de terminer la tra
 
 Ce fichier de sauvegarde est écrit en \acrfull{json} semblable visuellement à de l'xml.
 
-Il est composé de 4 partie:
+Il est composé de 4 parties:
 \begin{itemize}
 \item Constraint qui définit une durée contenant un processus
 \item Event permet de mettre des contraintes à la suite les unes des autres
 \item Timenode permet de synchroniser des event pour qu'ils s'exécutent en même temps
 \item scénario orchestre les contraintes / event / timenodes entre eux
 \end{itemize}
-et enfin les automations qui correspond aux fluctuation (la courbe) possible à l'intérieur d'un scénario.
+et enfin les automations qui correspondent aux fluctuations (la courbe) possible à l'intérieur d'un scénario.
 
-Une documentation\footnote{https://gitHub.com/OSSIA/i-score-metablocks/blob/master/README.md} a été faite pour permettre à la personne qui s'en chargera de mieux comprend le travail effectuer à l'heure actuelle.
+Une documentation\footnote{https://gitHub.com/OSSIA/i-score-metablocks/blob/master/README.md} a été faite pour permettre à la personne qui s'en chargera de mieux comprend le travail effectué à l'heure actuelle.
 
 
 \def\appendixpage{\vspace*{8cm} 
@@ -378,7 +378,7 @@ Une documentation\footnote{https://gitHub.com/OSSIA/i-score-metablocks/blob/mast
 \begin{appendices} 
 \chapter{Documentation} 
 \paragraph{}
-Contient des scripts pour transformer les fichiers issus du site internet \footnote{http://blocks.metabot.fr/} en fichier assembleur RHOCK et xml qui seront lisible par i-score, un logiciel séquenceur.
+Contient des scripts pour transformer les fichiers issus du site internet \footnote{http://blocks.metabot.fr/} en fichier assembleur RHOCK et xml qui seront lisibles par i-score, un logiciel séquenceur.
 \paragraph{}
 Pour cela, il faut installer libxml2 : 
 \texttt{sudo apt get install libxml2-utils}.
@@ -399,7 +399,7 @@ Pour mettre à jour le metabot:
     \texttt{python robotis-loader.py /dev/ttyACM0 metabot.bin}
 \item soit ./prepare.sh // make // make install
 Pour récupérer le dossier firmware du metabot:
-A l'heure actuelle, les fonctions rhocks ne sont pas fournit dans le dossier  gitHub\footnote{git clone https://gitHub.com/Rhoban/Metabot.git}.
+A l'heure actuelle, les fonctions rhocks ne sont pas fournies dans le dossier  gitHub\footnote{git clone https://gitHub.com/Rhoban/Metabot.git}.
 \end{itemize}
 
 \paragraph{}
@@ -421,7 +421,7 @@ Pour compiler une chorégraphie dans le metabot:
 Il est possible de lancer cette danse sur un smartphone via l'application Android metabot\footnote{https://play.google.com/store/apps/details?id=fr.metabot.mobile} Ou via un terminal avec run [id].
 \paragraph{}
 Commande à connaître:
-id étant le slot ou ce trouve le programme. Pour le connaître: store.
+id étant le slot où ce trouve le programme. Pour le connaître: store.
 \paragraph{}
 Pour arrêter un programme kill [id] plusieurs kill all. Pour supprimer un programme erase [id] ou erase all.
 
